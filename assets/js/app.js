@@ -10,116 +10,123 @@ document.addEventListener("DOMContentLoaded", () => {
        MOBILE NAVIGATION
     ======================================================== */
 
-    const nav = document.querySelector("nav");
+/* ========================================================
+   MOBILE NAVIGATION
+======================================================== */
 
-    if (nav) {
+const nav = document.querySelector("nav");
+const headerContainer = document.querySelector("header .container");
 
-        /*
-         * Create the mobile menu button automatically.
-         * This means you don't need to modify your HTML.
-         */
+if (nav && headerContainer) {
 
-        const headerContainer = document.querySelector(
-            "header .container"
+    const menuButton = document.createElement("button");
+
+    menuButton.className = "menu-toggle";
+
+    menuButton.type = "button";
+
+    menuButton.setAttribute(
+        "aria-label",
+        "Toggle navigation"
+    );
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+    menuButton.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+    `;
+
+    headerContainer.appendChild(menuButton);
+
+
+    /* Open / close menu */
+
+    menuButton.addEventListener("click", () => {
+
+        const open =
+            nav.classList.toggle("active");
+
+        menuButton.classList.toggle(
+            "active",
+            open
         );
 
-        if (headerContainer) {
+        menuButton.setAttribute(
+            "aria-expanded",
+            open ? "true" : "false"
+        );
 
-            const menuButton = document.createElement("button");
+    });
 
-            menuButton.className = "menu-toggle";
 
-            menuButton.setAttribute(
-                "aria-label",
-                "Open navigation menu"
-            );
+    /* Close after clicking a link */
+
+    nav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            nav.classList.remove("active");
+
+            menuButton.classList.remove("active");
 
             menuButton.setAttribute(
                 "aria-expanded",
                 "false"
             );
 
-            menuButton.innerHTML = `
-                <span></span>
-                <span></span>
-                <span></span>
-            `;
+        });
 
-            headerContainer.appendChild(menuButton);
+    });
 
-            menuButton.addEventListener("click", () => {
 
-                const isOpen =
-                    nav.classList.toggle("active");
+    /* Close when clicking outside */
 
-                menuButton.classList.toggle(
-                    "active",
-                    isOpen
-                );
+    document.addEventListener("click", event => {
 
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
+        if (
+            !nav.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
 
-            });
+            nav.classList.remove("active");
 
-            /*
-             * Close mobile menu after clicking a link.
-             */
+            menuButton.classList.remove("active");
 
-            const navLinks =
-                nav.querySelectorAll("a");
-
-            navLinks.forEach(link => {
-
-                link.addEventListener("click", () => {
-
-                    nav.classList.remove("active");
-
-                    menuButton.classList.remove(
-                        "active"
-                    );
-
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                });
-
-            });
-
-            /*
-             * Close menu when clicking outside it.
-             */
-
-            document.addEventListener("click", event => {
-
-                if (
-                    nav.classList.contains("active") &&
-                    !nav.contains(event.target) &&
-                    !menuButton.contains(event.target)
-                ) {
-
-                    nav.classList.remove("active");
-
-                    menuButton.classList.remove(
-                        "active"
-                    );
-
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                }
-
-            });
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         }
 
-    }
+    });
+
+
+    /* Close with Escape */
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+
+            nav.classList.remove("active");
+
+            menuButton.classList.remove("active");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    });
+
+}
 
 
     /* ========================================================
