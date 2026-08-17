@@ -1,0 +1,2275 @@
+/* ============================================================
+   XLERATOR RESEARCH
+   Modern Dark Theme
+   Part 1
+============================================================ */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ============================================================
+ROOT
+============================================================ */
+
+:root{
+
+--bg:#08111f;
+--bg2:#101b2d;
+--card:#162338;
+--card-hover:#1c2c45;
+
+--primary:#3b82f6;
+--primary-dark:#2563eb;
+
+--green:#10b981;
+
+--text:#f8fafc;
+--text-light:#cbd5e1;
+
+--border:#23334b;
+
+--shadow:0 20px 50px rgba(0,0,0,.35);
+
+--radius:18px;
+
+--transition:.35s ease;
+
+}
+
+/* ============================================================
+RESET
+============================================================ */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:"Inter",sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+line-height:1.7;
+
+font-size:16px;
+
+overflow-x:hidden;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+/* ============================================================
+COMMON
+============================================================ */
+
+.container{
+
+width:min(1200px,90%);
+
+margin:auto;
+
+}
+
+section{
+
+padding:90px 0;
+
+}
+
+h1{
+
+font-size:4rem;
+
+font-weight:800;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+h2{
+
+font-size:2.5rem;
+
+margin-bottom:25px;
+
+font-weight:700;
+
+}
+
+h3{
+
+font-size:1.3rem;
+
+margin-bottom:15px;
+
+}
+
+p{
+
+color:var(--text-light);
+
+margin-bottom:18px;
+
+}
+
+/* ============================================================
+HEADER
+============================================================ */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:999;
+
+background:rgba(8,17,31,.88);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+header .container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+height:75px;
+
+}
+
+.logo{
+
+font-size:1.5rem;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+color:white;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+align-items:center;
+
+}
+
+nav a{
+
+font-weight:500;
+
+color:var(--text-light);
+
+transition:var(--transition);
+
+}
+
+nav a:hover{
+
+color:white;
+
+}
+
+nav a.active{
+
+color:var(--primary);
+
+}
+
+/* ============================================================
+BUTTONS
+============================================================ */
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 34px;
+
+border-radius:999px;
+
+font-weight:600;
+
+transition:var(--transition);
+
+cursor:pointer;
+
+}
+
+.primary{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+.primary:hover{
+
+background:var(--primary-dark);
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.secondary{
+
+border:1px solid var(--border);
+
+background:transparent;
+
+color:white;
+
+}
+
+.secondary:hover{
+
+background:var(--card);
+
+transform:translateY(-3px);
+
+}
+
+/* ============================================================
+HERO
+============================================================ */
+
+.hero{
+
+padding-top:170px;
+
+padding-bottom:130px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+top:-120px;
+
+right:-120px;
+
+width:420px;
+
+height:420px;
+
+background:#2563eb;
+
+opacity:.15;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-160px;
+
+left:-100px;
+
+width:380px;
+
+height:380px;
+
+background:#10b981;
+
+opacity:.10;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+}
+
+.hero .container{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.hero p{
+
+font-size:1.25rem;
+
+max-width:650px;
+
+margin-bottom:40px;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+/* ============================================================
+ABOUT PREVIEW
+============================================================ */
+
+.about-preview{
+
+background:var(--bg2);
+
+}
+
+.about-preview p{
+
+max-width:900px;
+
+font-size:1.05rem;
+
+}
+
+/* ============================================================
+FEATURED RESEARCH
+============================================================ */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+margin-top:50px;
+
+}
+
+.card{
+
+background:var(--card);
+
+padding:35px;
+
+border-radius:var(--radius);
+
+border:1px solid rgba(255,255,255,.04);
+
+transition:var(--transition);
+
+box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+background:var(--card-hover);
+
+}
+
+.card h3{
+
+color:white;
+
+}
+
+.card a{
+
+display:inline-block;
+
+margin-top:20px;
+
+font-weight:600;
+
+color:var(--primary);
+
+}
+
+.card a:hover{
+
+text-decoration:underline;
+
+}
+
+/* ============================================================
+PAGE HEADER
+============================================================ */
+
+.page-header{
+
+padding-top:160px;
+
+padding-bottom:70px;
+
+text-align:center;
+
+background:linear-gradient(
+180deg,
+rgba(59,130,246,.08),
+transparent
+);
+
+}
+
+.page-header h1{
+
+margin-bottom:15px;
+
+}
+
+.page-header p{
+
+font-size:1.15rem;
+
+}
+
+/* ============================================================
+ABOUT PAGE
+============================================================ */
+
+.about-section{
+
+padding:80px 0;
+
+}
+
+.about-section.alt{
+
+background:var(--bg2);
+
+}
+
+.about-section .grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.skills{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:18px;
+
+margin-top:30px;
+
+}
+
+.skills li{
+
+background:var(--card);
+
+padding:18px 20px;
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,.05);
+
+transition:var(--transition);
+
+}
+
+.skills li:hover{
+
+background:var(--card-hover);
+
+transform:translateY(-4px);
+
+}
+
+/* End of Part 1 */
+/* ============================================================
+   XLERATOR RESEARCH
+   Part 2
+   Research • Sectors • Footer • Contact • Utilities
+============================================================ */
+
+/* ============================================================
+FEATURED RESEARCH
+============================================================ */
+
+.featured{
+    background:var(--bg);
+}
+
+.featured h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.featured p.section-intro{
+    max-width:700px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+
+/* ============================================================
+RESEARCH CARDS
+============================================================ */
+
+.card{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.card p{
+
+    flex:1;
+
+}
+
+.card a{
+
+    margin-top:25px;
+
+}
+
+.card:hover h3{
+
+    color:var(--primary);
+
+}
+
+/* ============================================================
+SECTORS
+============================================================ */
+
+.sectors{
+
+    background:var(--bg2);
+
+}
+
+.sectors h2{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.sector-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:28px;
+
+}
+
+.sector{
+
+    background:var(--card);
+
+    padding:35px 25px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.sector:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--card-hover);
+
+}
+
+.sector{
+
+    font-size:3rem;
+
+}
+
+.sector h3{
+
+    margin-top:18px;
+
+    font-size:1.1rem;
+
+}
+
+/* ============================================================
+RESEARCH PHILOSOPHY
+============================================================ */
+
+.philosophy{
+
+    background:var(--bg);
+
+}
+
+.quotes{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.quotes div{
+
+    background:linear-gradient(
+        135deg,
+        rgba(59,130,246,.15),
+        rgba(16,185,129,.08)
+    );
+
+    border:1px solid rgba(255,255,255,.05);
+
+    padding:28px;
+
+    border-radius:16px;
+
+    font-size:1.05rem;
+
+    transition:.35s;
+
+}
+
+.quotes div:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ============================================================
+ABOUT PAGE CARDS
+============================================================ */
+
+.about-section .card{
+
+    background:var(--card);
+
+    border-radius:16px;
+
+    padding:28px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.about-section .card:hover{
+
+    background:var(--card-hover);
+
+}
+
+/* ============================================================
+TIMELINE
+============================================================ */
+
+.timeline{
+
+    margin-top:50px;
+
+    border-left:3px solid var(--primary);
+
+    padding-left:35px;
+
+}
+
+.timeline-item{
+
+    margin-bottom:45px;
+
+    position:relative;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-45px;
+
+    top:5px;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+}
+
+.timeline-item h3{
+
+    margin-bottom:8px;
+
+}
+
+/* ============================================================
+BADGES
+============================================================ */
+
+.badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.badge{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.12);
+
+    border:1px solid rgba(59,130,246,.30);
+
+    color:#9dc4ff;
+
+    font-size:.9rem;
+
+}
+
+/* ============================================================
+TABLE
+============================================================ */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:35px;
+
+}
+
+th{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:15px;
+
+}
+
+td{
+
+    padding:15px;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+tr:nth-child(even){
+
+    background:rgba(255,255,255,.02);
+
+}
+
+/* ============================================================
+BLOCKQUOTE
+============================================================ */
+
+blockquote{
+
+    border-left:4px solid var(--primary);
+
+    padding:20px 25px;
+
+    margin:30px 0;
+
+    background:rgba(59,130,246,.08);
+
+    border-radius:8px;
+
+    color:white;
+
+}
+
+/* ============================================================
+CODE
+============================================================ */
+
+pre{
+
+    background:#0a1424;
+
+    border-radius:14px;
+
+    overflow:auto;
+
+    padding:25px;
+
+    margin-top:25px;
+
+}
+
+code{
+
+    color:#7dd3fc;
+
+}
+
+/* ============================================================
+CONTACT
+============================================================ */
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+}
+
+.contact-card{
+
+    background:var(--card);
+
+    padding:35px;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+}
+
+.contact-card:hover{
+
+    background:var(--card-hover);
+
+    transform:translateY(-6px);
+
+}
+
+.contact-card h3{
+
+    margin-bottom:20px;
+
+}
+
+/* ============================================================
+FORM
+============================================================ */
+
+form{
+
+    margin-top:20px;
+
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    margin-bottom:18px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#0d1828;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:1rem;
+
+}
+
+textarea{
+
+    min-height:180px;
+
+    resize:vertical;
+
+}
+
+input:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+}
+
+/* ============================================================
+FOOTER
+============================================================ */
+
+footer{
+
+    margin-top:80px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    background:#050b14;
+
+}
+
+footer .container{
+
+    padding:40px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+footer p{
+
+    margin:0;
+
+    color:#94a3b8;
+
+}
+
+footer a{
+
+    color:var(--primary);
+
+}
+
+footer a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ============================================================
+HELPER CLASSES
+============================================================ */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-2{
+
+    margin-top:20px;
+
+}
+
+.mt-3{
+
+    margin-top:30px;
+
+}
+
+.mt-4{
+
+    margin-top:40px;
+
+}
+
+.mt-5{
+
+    margin-top:50px;
+
+}
+
+.mb-2{
+
+    margin-bottom:20px;
+
+}
+
+.mb-3{
+
+    margin-bottom:30px;
+
+}
+
+.mb-4{
+
+    margin-bottom:40px;
+
+}
+
+.shadow{
+
+    box-shadow:var(--shadow);
+
+}
+
+.rounded{
+
+    border-radius:18px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+/* ============================================================
+END OF PART 2
+============================================================ */
+/* ============================================================
+   XLERATOR RESEARCH
+   Part 3
+   Responsive Design • Animations • Mobile • Theme Utilities
+============================================================ */
+
+
+/* ============================================================
+   ANIMATION VARIABLES
+============================================================ */
+
+:root{
+
+    --ease-out:cubic-bezier(.16,1,.3,1);
+    --ease-in-out:cubic-bezier(.65,0,.35,1);
+
+}
+
+
+/* ============================================================
+   PAGE LOAD ANIMATION
+============================================================ */
+
+body{
+
+    animation:pageFade .6s ease both;
+
+}
+
+@keyframes pageFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+/* ============================================================
+   HERO BACKGROUND EFFECT
+============================================================ */
+
+.hero{
+
+    isolation:isolate;
+
+}
+
+.hero .container{
+
+    animation:heroReveal .9s var(--ease-out) both;
+
+}
+
+@keyframes heroReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ============================================================
+   GRADIENT TEXT
+============================================================ */
+
+.gradient-text{
+
+    background:linear-gradient(
+        90deg,
+        #60a5fa,
+        #34d399
+    );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+
+/* ============================================================
+   GLASS CARD
+============================================================ */
+
+.glass{
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+}
+
+
+/* ============================================================
+   GLOW
+============================================================ */
+
+.glow{
+
+    box-shadow:
+
+        0 0 0 1px rgba(59,130,246,.08),
+
+        0 20px 60px rgba(37,99,235,.12);
+
+}
+
+
+/* ============================================================
+   IMAGE / MEDIA
+============================================================ */
+
+.media{
+
+    overflow:hidden;
+
+    border-radius:var(--radius);
+
+}
+
+.media img{
+
+    transition:transform .6s var(--ease-out);
+
+}
+
+.media:hover img{
+
+    transform:scale(1.04);
+
+}
+
+
+/* ============================================================
+   RESEARCH PAGE
+============================================================ */
+
+.research-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            auto-fit,
+            minmax(280px,1fr)
+        );
+
+    gap:28px;
+
+    margin-top:45px;
+
+}
+
+.research-card{
+
+    position:relative;
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:20px;
+
+    padding:32px;
+
+    overflow:hidden;
+
+    transition:
+
+        transform .35s var(--ease-out),
+
+        border-color .35s ease,
+
+        background .35s ease;
+
+}
+
+.research-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--green)
+    );
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:transform .4s var(--ease-out);
+
+}
+
+.research-card:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--card-hover);
+
+    border-color:rgba(59,130,246,.25);
+
+}
+
+.research-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+
+/* ============================================================
+   RESEARCH CATEGORY
+============================================================ */
+
+.category{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.12);
+
+    border:1px solid rgba(59,130,246,.20);
+
+    color:#93c5fd;
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.research-card .category{
+
+    margin-bottom:18px;
+
+}
+
+
+/* ============================================================
+   RESEARCH META
+============================================================ */
+
+.research-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:22px;
+
+    color:#94a3b8;
+
+    font-size:.85rem;
+
+}
+
+
+/* ============================================================
+   RESEARCH ARTICLE
+============================================================ */
+
+.article{
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+.article h1{
+
+    margin-bottom:20px;
+
+}
+
+.article h2{
+
+    margin-top:55px;
+
+    padding-top:10px;
+
+}
+
+.article h3{
+
+    margin-top:35px;
+
+}
+
+.article p{
+
+    font-size:1.05rem;
+
+    line-height:1.85;
+
+}
+
+.article ul{
+
+    margin:25px 0;
+
+    padding-left:25px;
+
+    list-style:disc;
+
+}
+
+.article li{
+
+    margin-bottom:10px;
+
+    color:var(--text-light);
+
+}
+
+
+/* ============================================================
+   ARTICLE HEADER
+============================================================ */
+
+.article-header{
+
+    max-width:900px;
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.article-header .category{
+
+    margin-bottom:25px;
+
+}
+
+.article-header p{
+
+    max-width:700px;
+
+    margin:0 auto;
+
+}
+
+
+/* ============================================================
+   STAT / METRIC CARDS
+============================================================ */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:18px;
+
+    margin:40px 0;
+
+}
+
+.stat{
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:16px;
+
+    padding:25px;
+
+}
+
+.stat-value{
+
+    display:block;
+
+    font-size:1.8rem;
+
+    font-weight:800;
+
+    color:white;
+
+    margin-bottom:5px;
+
+}
+
+.stat-label{
+
+    color:#94a3b8;
+
+    font-size:.85rem;
+
+}
+
+
+/* ============================================================
+   CHART CONTAINER
+============================================================ */
+
+.chart-container{
+
+    width:100%;
+
+    min-height:350px;
+
+    padding:25px;
+
+    margin:35px 0;
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+
+/* ============================================================
+   TAGS
+============================================================ */
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.tag{
+
+    padding:7px 13px;
+
+    border-radius:8px;
+
+    background:rgba(255,255,255,.05);
+
+    color:#cbd5e1;
+
+    font-size:.8rem;
+
+}
+
+
+/* ============================================================
+   LINK ARROW
+============================================================ */
+
+.link-arrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#60a5fa;
+
+    font-weight:600;
+
+    transition:gap .25s ease;
+
+}
+
+.link-arrow:hover{
+
+    gap:13px;
+
+}
+
+
+/* ============================================================
+   SECTION INTRO
+============================================================ */
+
+.section-intro{
+
+    max-width:720px;
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+}
+
+
+/* ============================================================
+   DIVIDER
+============================================================ */
+
+.divider{
+
+    height:1px;
+
+    width:100%;
+
+    background:rgba(255,255,255,.07);
+
+    margin:60px 0;
+
+}
+
+
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:
+
+        opacity .7s var(--ease-out),
+
+        transform .7s var(--ease-out);
+
+}
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ============================================================
+   NAVIGATION MOBILE BUTTON
+============================================================ */
+
+.menu-toggle{
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:10px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.04);
+
+    color:white;
+
+    cursor:pointer;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+.menu-toggle span{
+
+    width:19px;
+
+    height:2px;
+
+    background:white;
+
+    border-radius:10px;
+
+    transition:.3s ease;
+
+}
+
+
+/* ============================================================
+   MOBILE NAVIGATION
+============================================================ */
+
+@media (max-width:768px){
+
+    header .container{
+
+        height:68px;
+
+    }
+
+    .menu-toggle{
+
+        display:flex;
+
+    }
+
+    nav{
+
+        position:absolute;
+
+        top:68px;
+
+        left:0;
+
+        width:100%;
+
+        background:rgba(8,17,31,.97);
+
+        backdrop-filter:blur(20px);
+
+        border-bottom:1px solid rgba(255,255,255,.06);
+
+        max-height:0;
+
+        overflow:hidden;
+
+        transition:
+
+            max-height .4s var(--ease-out);
+
+    }
+
+    nav.active{
+
+        max-height:450px;
+
+    }
+
+    nav ul{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:0;
+
+        padding:15px 5% 25px;
+
+    }
+
+    nav li{
+
+        width:100%;
+
+    }
+
+    nav a{
+
+        display:block;
+
+        padding:14px 0;
+
+        border-bottom:1px solid rgba(255,255,255,.04);
+
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE MENU ANIMATION
+============================================================ */
+
+.menu-toggle.active span:nth-child(1){
+
+    transform:
+
+        translateY(7px)
+
+        rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-toggle.active span:nth-child(3){
+
+    transform:
+
+        translateY(-7px)
+
+        rotate(-45deg);
+
+}
+
+
+/* ============================================================
+   RESPONSIVE — LARGE TABLET
+============================================================ */
+
+@media (max-width:1100px){
+
+    h1{
+
+        font-size:3.5rem;
+
+    }
+
+    h2{
+
+        font-size:2.2rem;
+
+    }
+
+    section{
+
+        padding:75px 0;
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE — TABLET
+============================================================ */
+
+@media (max-width:900px){
+
+    .container{
+
+        width:min(92%,1200px);
+
+    }
+
+    h1{
+
+        font-size:3rem;
+
+    }
+
+    .hero{
+
+        padding-top:145px;
+
+        padding-bottom:100px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+============================================================ */
+
+@media (max-width:768px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    section{
+
+        padding:65px 0;
+
+    }
+
+    h1{
+
+        font-size:2.45rem;
+
+        letter-spacing:-.04em;
+
+    }
+
+    h2{
+
+        font-size:2rem;
+
+        letter-spacing:-.02em;
+
+    }
+
+    h3{
+
+        font-size:1.15rem;
+
+    }
+
+    .hero{
+
+        padding-top:130px;
+
+        padding-bottom:85px;
+
+        text-align:center;
+
+    }
+
+    .hero p{
+
+        font-size:1.05rem;
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+    .buttons{
+
+        justify-content:center;
+
+    }
+
+    .btn{
+
+        padding:13px 25px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .sector-grid{
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
+        gap:15px;
+
+    }
+
+    .sector{
+
+        padding:25px 15px;
+
+        font-size:2.3rem;
+
+    }
+
+    .sector h3{
+
+        font-size:.95rem;
+
+    }
+
+    .quotes{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stats{
+
+        grid-template-columns:
+
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
+    }
+
+    .stat{
+
+        padding:20px;
+
+    }
+
+    .stat-value{
+
+        font-size:1.5rem;
+
+    }
+
+    .article p{
+
+        font-size:1rem;
+
+    }
+
+    footer .container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE
+============================================================ */
+
+@media (max-width:480px){
+
+    .container{
+
+        width:90%;
+
+    }
+
+    h1{
+
+        font-size:2.15rem;
+
+    }
+
+    h2{
+
+        font-size:1.75rem;
+
+    }
+
+    .hero{
+
+        padding-top:115px;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .buttons .btn{
+
+        width:100%;
+
+    }
+
+    .sector-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card{
+
+        padding:25px;
+
+    }
+
+    .research-card{
+
+        padding:25px;
+
+    }
+
+    .page-header{
+
+        padding-top:125px;
+
+        padding-bottom:50px;
+
+    }
+
+}
+
+
+/* ============================================================
+   VERY SMALL DEVICES
+============================================================ */
+
+@media (max-width:360px){
+
+    h1{
+
+        font-size:1.95rem;
+
+    }
+
+    h2{
+
+        font-size:1.6rem;
+
+    }
+
+    .logo{
+
+        font-size:1.25rem;
+
+    }
+
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+:focus-visible{
+
+    outline:3px solid rgba(96,165,250,.7);
+
+    outline-offset:4px;
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        scroll-behavior:auto !important;
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+
+    }
+
+}
+
+
+/* ============================================================
+   SELECTION
+============================================================ */
+
+::selection{
+
+    background:rgba(59,130,246,.35);
+
+    color:white;
+
+}
+
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+
+::-webkit-scrollbar{
+
+    width:9px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#060d18;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#263954;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#385477;
+
+}
+
+
+/* ============================================================
+   END OF XLERATOR STYLE SHEET
+============================================================ */
