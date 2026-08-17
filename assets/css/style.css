@@ -1710,127 +1710,186 @@ body{
 
 
 /* ============================================================
-   NAVIGATION MOBILE BUTTON
-============================================================ */
-
-.menu-toggle{
-
-    display:none;
-
-    width:42px;
-
-    height:42px;
-
-    border-radius:10px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    background:rgba(255,255,255,.04);
-
-    color:white;
-
-    cursor:pointer;
-
-    align-items:center;
-
-    justify-content:center;
-
-    flex-direction:column;
-
-    gap:5px;
-
-}
-
-.menu-toggle span{
-
-    width:19px;
-
-    height:2px;
-
-    background:white;
-
-    border-radius:10px;
-
-    transition:.3s ease;
-
-}
-
-
-/* ============================================================
    MOBILE NAVIGATION
 ============================================================ */
 
-@media (max-width:768px){
+header .container {
+    position: relative;
+}
 
-    header .container{
+.menu-toggle {
 
-        height:68px;
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255,255,255,.10);
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.04);
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+
+}
+
+.menu-toggle span {
+
+    display: block;
+
+    width: 20px;
+    height: 2px;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    transition:
+        transform .3s ease,
+        opacity .2s ease;
+
+}
+
+
+/* ============================================================
+   MOBILE MENU
+============================================================ */
+
+@media (max-width: 768px) {
+
+    header .container {
+
+        height: 68px;
 
     }
 
-    .menu-toggle{
+    .menu-toggle {
 
-        display:flex;
+        display: flex;
 
     }
 
-    nav{
+    nav {
 
-        position:absolute;
+        position: absolute;
 
-        top:68px;
+        top: 68px;
+        left: 0;
+        right: 0;
 
-        left:0;
+        width: 100%;
 
-        width:100%;
+        background: rgba(8,17,31,.98);
 
-        background:rgba(8,17,31,.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
 
-        backdrop-filter:blur(20px);
+        border-bottom: 1px solid rgba(255,255,255,.08);
 
-        border-bottom:1px solid rgba(255,255,255,.06);
+        box-shadow: 0 20px 40px rgba(0,0,0,.25);
 
-        max-height:0;
+        max-height: 0;
 
-        overflow:hidden;
+        overflow: hidden;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-8px);
 
         transition:
-
-            max-height .4s var(--ease-out);
-
-    }
-
-    nav.active{
-
-        max-height:450px;
+            max-height .35s ease,
+            opacity .25s ease,
+            transform .25s ease,
+            visibility .25s ease;
 
     }
 
-    nav ul{
 
-        flex-direction:column;
+    nav.active {
 
-        align-items:stretch;
+        max-height: 420px;
 
-        gap:0;
+        opacity: 1;
 
-        padding:15px 5% 25px;
+        visibility: visible;
 
-    }
-
-    nav li{
-
-        width:100%;
+        transform: translateY(0);
 
     }
 
-    nav a{
 
-        display:block;
+    nav ul {
 
-        padding:14px 0;
+        display: flex;
 
-        border-bottom:1px solid rgba(255,255,255,.04);
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        width: 100%;
+
+        padding: 10px 5% 20px;
+
+    }
+
+
+    nav li {
+
+        width: 100%;
+
+    }
+
+
+    nav a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 15px 5px;
+
+        color: #cbd5e1;
+
+        border-bottom: 1px solid rgba(255,255,255,.05);
+
+    }
+
+
+    nav li:last-child a {
+
+        border-bottom: none;
+
+    }
+
+
+    nav a:hover {
+
+        color: #ffffff;
+
+        padding-left: 10px;
+
+    }
+
+
+    nav a.active {
+
+        color: #60a5fa;
 
     }
 
@@ -1838,32 +1897,46 @@ body{
 
 
 /* ============================================================
-   MOBILE MENU ANIMATION
+   HAMBURGER → X
 ============================================================ */
 
-.menu-toggle.active span:nth-child(1){
+.menu-toggle.active span:nth-child(1) {
 
-    transform:
-
-        translateY(7px)
-
-        rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
 
 }
 
-.menu-toggle.active span:nth-child(2){
+.menu-toggle.active span:nth-child(2) {
 
-    opacity:0;
+    opacity: 0;
 
 }
 
-.menu-toggle.active span:nth-child(3){
+.menu-toggle.active span:nth-child(3) {
 
-    transform:
+    transform: translateY(-7px) rotate(-45deg);
 
-        translateY(-7px)
+}
 
-        rotate(-45deg);
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 480px) {
+
+    nav ul {
+
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+    nav a {
+
+        padding: 14px 5px;
+
+    }
 
 }
 
